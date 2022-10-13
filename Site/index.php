@@ -1,7 +1,9 @@
 <?php
 require_once 'app/Core/Core.php';
+require_once 'lib/Database/Connection.php';
 require_once 'app/Controller/HomeController.php';
 require_once 'app/Controller/ErroController.php';
+require_once 'app/model/Postagem.php';
 $template = file_get_contents('app/template/estrutura.php');
 ob_start();
     $core = new Core();

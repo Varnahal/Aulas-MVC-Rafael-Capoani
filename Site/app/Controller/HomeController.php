@@ -1,6 +1,13 @@
 <?php
 Class HomeController{
     public function index(){
-        echo'Home';
+        try {
+            $colecaoPostagens = Postagem::selecionaTodos();
+            var_dump($colecaoPostagens);
+        } catch (Exception $e) {
+            echo $e->getMessage();
+        }
+        
+
     }
 }
