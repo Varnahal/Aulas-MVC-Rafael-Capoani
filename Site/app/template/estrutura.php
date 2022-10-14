@@ -70,8 +70,8 @@
         <div class="topo">
             <header>
                 <nav>
-                <a href="#">Home</a>|
-                <a href="#">Sobre</a>
+                <a href="http://github/Aulas-MVC-Rafael-Capoani/Site/">Home</a>|
+                <a href="http://github/Aulas-MVC-Rafael-Capoani/Site/?pagina=sobre">Sobre</a>
                 </nav>
             </header>
         </div>

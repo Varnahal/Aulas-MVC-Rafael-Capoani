@@ -17,5 +17,17 @@ Class Postagem{
         }
         
     }
+    public static function selecionaporid($idpost){
+        $con = Connection::getConn();
+        $sql = "SELECT * FROM postagem WHERE id = :id";
+        $sql = $con->prepare($sql);
+        $sql->bindValue(':id',$idpost,PDO::PARAM_INT);
+        $sql->execute();
+        $resultado = $sql->fetchObject('Postagem');
+        if(!$resultado){
+            throw new Exception("não foi encontrado registros");
+        }
+        return $resultado;
+    }
 
 }

@@ -1,21 +1,11 @@
 <section>
     <h1>Postagens</h1>
+    {% for postagem in postagens %}
     <article>
         <header>
-            <h2><a href="#">Titulo da postagem</a></h2>
+            <h2><a href="?pagina=post&id={{postagem.id}}">{{postagem.titulo}}</a></h2>
         </header>
-        <p>Conteudo da postagem</p>
+        <p>{{postagem.conteudo}}</p>
     </article>
-    <article>
-        <header>
-            <h2><a href="#">Titulo da postagem</a></h2>
-        </header>
-        <p>Conteudo da postagem</p>
-    </article>
-    <article>
-        <header>
-            <h2><a href="#">Titulo da postagem</a></h2>
-        </header>
-        <p>Conteudo da postagem</p>
-    </article>
+    {% endfor %}
 </section>
