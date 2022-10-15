@@ -3,7 +3,6 @@ Class PostController{
     public function index($params){
         try {
             $Postagem = Postagem::selecionaporid($params);
-            var_dump($Postagem);
 
             $loader = new \Twig\Loader\FilesystemLoader('app/view');
             $twig = new \Twig\Environment($loader);
@@ -12,6 +11,7 @@ Class PostController{
             $parametros = array();
             $parametros['titulo'] = $Postagem->titulo;
             $parametros['conteudo'] = $Postagem->conteudo;
+            $parametros['comentarios'] = $Postagem->comentarios;
             $conteudo = $template->render($parametros);
             echo $conteudo;
             
