@@ -6,7 +6,7 @@ abstract class Connection{
 
     public static function getConn(){
         if(self::$conn == null){
-            self::$conn = new PDO('mysql: host=localhost; dbname=mvc- rafael-capoani;','root','');
+            self::$conn = new PDO('mysql: host=localhost; dbname=mvc- rafael-capoani;charset=utf8','root','');
         }
         
         return self::$conn;

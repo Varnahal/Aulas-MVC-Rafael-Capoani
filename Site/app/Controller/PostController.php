@@ -3,6 +3,7 @@ Class PostController{
     public function index($params){
         try {
             $Postagem = Postagem::selecionaporid($params);
+            var_dump($Postagem);
 
             $loader = new \Twig\Loader\FilesystemLoader('app/view');
             $twig = new \Twig\Environment($loader);
