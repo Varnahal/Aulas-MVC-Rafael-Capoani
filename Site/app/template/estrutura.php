@@ -63,6 +63,9 @@
             color: #6495ED;
             margin-bottom: 20px;
         }
+        .dir-float{
+            float: right;
+        }
     </style>
 </head>
 <body>
@@ -72,6 +75,7 @@
                 <nav>
                 <a href="http://github/Aulas-MVC-Rafael-Capoani/Site/">Home</a>|
                 <a href="http://github/Aulas-MVC-Rafael-Capoani/Site/?pagina=sobre">Sobre</a>
+                <a class="dir-float" href="http://github/Aulas-MVC-Rafael-Capoani/Site/?pagina=admin&metodo=index">Admin</a>
                 </nav>
             </header>
         </div>

@@ -1,4 +1,7 @@
 <?php
+
+use JetBrains\PhpStorm\ExpectedValues;
+
 Class Postagem{
 
     public static function selecionaTodos(){
@@ -32,5 +35,37 @@ Class Postagem{
         }
         return $resultado;
     }
-
+    public static function insert($dadosPost){
+        if(empty($dadosPost['titulo'])||empty($dadosPost['conteudo'])){
+            throw new Exception("Preencha tudo");
+            return false;
+        }
+        $con = Connection::getConn();
+        $sql = 'INSERT INTO postagem (titulo,conteudo) VALUES (:tit,:cont)';
+        $sql = $con->prepare($sql);
+        $sql->bindValue(':tit',$dadosPost['titulo']);
+        $sql->bindValue(':cont',$dadosPost['conteudo']);
+        $res = $sql->execute();
+        if($res == false){
+            throw new Exception("Falha ao inserir informações");
+            return false;
+        }
+        return true;
+    }
+    public static function delete($id){
+        if(empty($id)){
+            throw new Exception("ERRO");
+            return false;
+        }
+        $con = Connection::getConn();
+        $sql = 'DELETE FROM postagem where id=:id';
+        $sql = $con->prepare($sql);
+        $sql->bindValue(':id',$id);
+        $res = $sql->execute();
+        if($res == false){
+            throw new Exception("Falha ao deletar informações");
+            return false;
+        }
+        return true;
+    }
 }
