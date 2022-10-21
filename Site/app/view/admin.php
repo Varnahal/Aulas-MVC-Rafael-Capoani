@@ -15,7 +15,7 @@
     <tr>
         <th>{{postagem.id}}</th>
         <th>{{postagem.titulo}}</th>
-        <th>ALTERAÇÂO</th>
+        <th><a style=background-color:yellow;color:black; href="http://github/Aulas-MVC-Rafael-Capoani/Site/?pagina=admin&metodo=change&id={{postagem.id}}">ALTERAÇÂO</a></th>
         <th></th>
         <th><a style=background-color:red;color:white; href="http://github/Aulas-MVC-Rafael-Capoani/Site/?pagina=admin&metodo=delete&id={{postagem.id}}">DELECÂO</a></th>
     </tr>

@@ -68,4 +68,19 @@ Class Postagem{
         }
         return true;
     }
+    public static function update($params){
+        $con = Connection::getConn();
+        $sql = "UPDATE postagem SET titulo = :tit, conteudo=:cont WHERE id=:id";
+        $sql = $con->prepare($sql);
+        $sql->bindValue(':id',$params['id']);
+        $sql->bindValue(':cont',$params['conteudo']);
+        $sql->bindValue(':tit',$params['titulo']);
+        $resultado = $sql->execute();
+        if($resultado == false){
+            throw new Exception("erro ao alterar");
+            return false;
+        }
+        return true;
+
+    }
 }
